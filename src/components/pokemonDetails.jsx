@@ -6,8 +6,9 @@ export const Details = (props)=>{
     const {setShowModal} = useContext(modalContext);
     
     return(
-        <aside className={`modal ${type}`}>
+        <section className={`modal ${type}`}>
             <section className="show-modal">
+                <aside>
                 <div className="div-1">
                     <img src={image} alt={`${name}`} />
                     <h3>{name}</h3>
@@ -16,6 +17,8 @@ export const Details = (props)=>{
                     <p>Weight: {weight}</p>
                     <p>Height: {height}</p>
                 </div>
+                </aside>
+                <aside className="attacks">
                 <div className="div-3">
                     {
                         stats.map(({stat},i)=>{
@@ -31,8 +34,9 @@ export const Details = (props)=>{
                         })
                     }
                 </div>
+                </aside>
             </section>
             <button className="close-btn" onClick={()=> setShowModal(false)}>x</button>
-        </aside>
+        </section>
     )
 }

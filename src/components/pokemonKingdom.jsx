@@ -1,16 +1,21 @@
 import { Characters } from './characters';
 import { useEffect, useState } from 'react';
+import { Loader } from './lodader';
+import { Search } from './search';
 
 export const Pokemon = ()=>{
     const [pokemons,setPokemons] = useState([]);
     const [newUrl,setnewUrl] = useState('');
+    const [loader,setLoader] = useState(false);
 
     
   const fetchPokemons = async(url)=>{
+    setLoader(true);
     const res = await fetch(url);
     const data = await res.json();
     setPokemons([...pokemons,...data[0].results]);
     setnewUrl(data[0].next)
+    setLoader(false);
 
   }
   useEffect(()=>{
@@ -18,7 +23,9 @@ export const Pokemon = ()=>{
   },[]);
 
   const fetchMorePokemon = ()=>{
+    setLoader(true);
     fetchPokemons(newUrl);
+    setLoader(false);
   }
   return (
     <main className='main-container'>
@@ -33,6 +40,8 @@ export const Pokemon = ()=>{
         </div>
       
       </header>
+      <Search/>
+      {loader && <Loader/>}
       <section className='pokemons'>
         {
           pokemons.map(({url})=>{

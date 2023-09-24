@@ -358,6 +358,13 @@
   width: 10rem;
 }
 
+aside{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
 .close-btn{
   align-self: flex-start;
   padding: 0.5rem;
@@ -369,7 +376,172 @@
   cursor: pointer;
 }
 
-@media only screen and (max-width: 768px) {
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Styles for the loader */
+.loader {
+  border: 4px solid #3498db;
+  border-top: 4px solid transparent;
+  border-radius: 50%;
+  width: 50px; 
+  height: 50px; 
+  animation: spin 2s linear infinite; 
+}
+
+/* Keyframes for the loader spin animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media screen and (max-width: 768px){
+  .header{
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+    justify-content: space-evenly;
+    gap: 5rem;
+    align-items: center;
+    margin-bottom: 2rem;
+    color: #ddd;
+    width: 100%;
+    height: auto;
+    position: relative;
+    margin-bottom: 10rem;
+  }
+  /* .header div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem;
+  } */
+}
+
+@media screen and (max-width:480px){
+  /* .header{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  } */
+  .content{
+    font-size: 2.5rem;
+    left:0cqmax;
+	position: relative;
+  justify-content: space-between;
+  margin-right: 2rem;
+  }
+  .content2{
+    align-items: center;
+    font-size: 2.5rem;
+      left:0cqmax;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      margin-right: 2rem;
+  }
+  .main-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .card img{
+    width: 8rem;
+    height: 8rem;
+  }
+  .card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    height: 17rem;
+    width: 12rem;
+    margin: 1rem;
+    padding: 1rem;
+    transition: transform 0.25s ease-in-out;
+  }
+  .card:hover{
+    transform: scale(1.07);
+  }
+  .pokemons{
+    display: flex;
+    flex-direction: column;
+    flex-wrap:nowrap;
+    justify-content: center;
+  }
+  .morePokemon{
+    background-image: linear-gradient(315deg, #76daff 0%, #fcd000 74%);
+    border-radius: 6px;
+    border: 1px solid #c6c6c6;
+    color: #444;
+    font-weight: 550;
+    padding: 0.8rem 1rem;
+    width: 10rem;
+    margin: 1rem;
+    font-family: "Poppins", sans-serif;
+  }
+  .show-modal{
+    display: flex;
+    flex-direction: column;
+    justify-content:center ;
+    height: auto;
+    gap: 1rem;
+    padding: 0.7rem;
+  }
+  .div-1 img{
+    height: 6rem;
+    width: 6rem;
+  }
+  .attacks{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .modal{
+    display: flex;
+    width: 13rem;
+    align-items: center;
+    margin: 1rem;
+  }
+  .div-1 h3{
+    text-decoration: underline;
+    font-size: 1rem;
+  }
+  .div-1{
+    gap: 1rem;
+  }
+  aside{
+    font-size: 0.9rem;
+    gap: 0.5rem;
+  }
+  .close-btn{
+    align-self: flex-start;
+    padding: 0.2rem;
+    border-radius: 60%;
+    margin: 0.5rem;
+    background-color: whitesmoke;
+  }
+  .header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4rem;
+    align-items: center;
+    margin-bottom: 8rem;
+    color: #ddd;
+    width: 8rem;
+    height: auto;
+    position: relative;
+  }
+}
+
+/* @media only screen and (max-width: 480){
   .header{
     display: flex;
     flex-direction: column;
@@ -377,17 +549,35 @@
     justify-content: center;
 
   }
-  .header div{
+  .main-container{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    margin: 2rem;
   }
-}
-
-@media only screen and (max-width: 480px){
-  .card{
+  .pokemons{
     display: flex;
     flex-direction: column;
+    flex-wrap:nowrap;
+    justify-content: center;
   }
-}
+  .show-modal{
+    align-items: center;
+    gap: 1rem;
+    height: 30rem;
+    padding: 1rem;
+  }
+  .modal-container{
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    background-color: rgba(0,0,0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .content .content2{
+    font-size: 1rem;
+  }
+} */
