@@ -1,7 +1,6 @@
 import { Characters } from './characters';
 import { useEffect, useState } from 'react';
 import { Loader } from './lodader';
-import { Search } from './search';
 
 export const Pokemon = ()=>{
     const [pokemons,setPokemons] = useState([]);
@@ -40,7 +39,6 @@ export const Pokemon = ()=>{
         </div>
       
       </header>
-      <Search/>
       {loader && <Loader/>}
       <section className='pokemons'>
         {
